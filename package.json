@@ -1,0 +1,25 @@
+{
+  "name": "choochoo",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "Train-based experiments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/http-server/bin/http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmkay/choochoo.git"
+  },
+  "author": "Mateusz Kulewicz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmkay/choochoo/issues"
+  },
+  "homepage": "https://github.com/mmkay/choochoo#readme",
+  "dependencies": {
+    "angular": "^1.4.9",
+    "babylonjs": "^2.2.0",
+    "http-server": "^0.8.5"
+  }
+}
