@@ -9,13 +9,17 @@ babylonWindow.directive("babylon",
 				var engine = new BABYLON.Engine(canvas, true);
 				var createScene = function() {
 					var scene = new BABYLON.Scene(engine);
-					var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 5,-10), scene);
-					camera.setTarget(BABYLON.Vector3.Zero());
+					var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 0.5,-10), scene);
+					camera.setTarget(new BABYLON.Vector3(0, 0.5, 0));
 					camera.attachControl(canvas, false);
-					var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,1,0), scene);
-					var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene);
-					sphere.position.y = 1;
-					var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene);
+					var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,500,0), scene);
+					var startPoint = BABYLON.Mesh.CreateSphere('sphere1', 16, 0.05, scene);
+					scene.clearColor = BABYLON.Color3.FromInts(135, 206, 250);
+					var materialGrey = new BABYLON.StandardMaterial("textureGrey", scene);
+					materialGrey.diffuseColor = BABYLON.Color3.FromInts(238, 233, 233);
+					
+					var ground = BABYLON.Mesh.CreateGround('ground1', 200, 200, 2, scene);
+					ground.material = materialGrey;
 					return scene;
 				}
 				var scene = createScene();
