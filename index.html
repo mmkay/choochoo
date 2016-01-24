@@ -2,19 +2,35 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>choochoo</title>
-  <link rel="stylesheet" href="style/style.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+  
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
   
   <script src="node_modules/angular/angular.js"></script>
   <script src="node_modules/babylonjs/babylon.js"></script>
   
+  <script src="app/position/positionService.js"></script>
   <script src="app/babylon/babylonWindow.js"></script>
   
   <script src="app/index.js"></script>
+  
+  <script src="app/dashboard/dashboard.js"></script>
 </head>
 <body>
-	<div ng-app="choochooApp">
-		<canvas babylon id="renderCanvas"></canvas>
+	<div ng-app="choochooApp" class="container-fluid">
+		<canvas babylon id="renderCanvas" class="col-md-9"></canvas>
+		<div class="col-md-3">
+			<div class="row" ng-controller="DashboardDataController">
+				<div class="row">Current lat: {{currentLatitude}}</div>
+				<div class="row">Current lon: {{currentLongitude}}</div>
+			</div>
+			<div class="row">
+				Inputs
+			</div>
+		</div>
 	</div>
 </body>
 </html>
