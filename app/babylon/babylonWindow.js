@@ -9,8 +9,8 @@ babylonWindow.directive("babylon",
 				var engine = new BABYLON.Engine(canvas, true);
 				var createScene = function() {
 					var scene = new BABYLON.Scene(engine);
-					var startPosition = PositionService.getStartPosition();
-					var direction = PositionService.getDirection();
+					var startPosition = PositionService.currentPosition;
+					var direction = PositionService.direction;
 					
 					var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0.0, 0.5, 0.0), scene);
 					camera.setTarget(new BABYLON.Vector3(direction.x, direction.y, direction.z));
